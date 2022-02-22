@@ -1,10 +1,7 @@
 package com.denniskao;
 
 import java.io.IOException;
-import java.net.SocketAddress;
-import java.net.SocketOption;
-import java.net.StandardProtocolFamily;
-import java.net.UnixDomainSocketAddress;
+import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
@@ -14,6 +11,7 @@ public class UnixDomain {
     public static void main(String[] args) throws IOException {
         var server = ServerSocketChannel.open(StandardProtocolFamily.UNIX);
         var address = UnixDomainSocketAddress.of("./abc.socket");
+        server.setOption(StandardSocketOptions.SO_REUSEPORT, true);
         server.bind(address);
 
 
