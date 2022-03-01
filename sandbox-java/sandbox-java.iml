@@ -54,16 +54,27 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:11.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlet:11.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:11.0.7" level="project" />
-    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.4.13" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.4.14" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.projectreactor:reactor-test:3.4.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.projectreactor:reactor-test:3.4.14" level="project" />
     <orderEntry type="library" name="Maven: io.rsocket:rsocket-core:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: io.rsocket:rsocket-transport-netty:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor.netty:reactor-netty-core:1.0.7" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor.netty:reactor-netty-http:1.0.7" level="project" />
+    <orderEntry type="library" name="Maven: com.linecorp.armeria:armeria:1.14.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.netty:netty-transport-native-unix-common:linux-x86_64:4.1.73.Final" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.netty:netty-tcnative-boringssl-static:2.0.46.Final" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.aayushatharva.brotli4j:brotli4j:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.10" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.10" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />

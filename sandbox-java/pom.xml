@@ -14,8 +14,8 @@
         <jetty.version>11.0.7</jetty.version>
         <logback.version>1.2.10</logback.version>
         <netty.version>4.1.72.Final</netty.version>
-        <reactor.version>3.4.13</reactor.version>
-        <slf4j.version>1.7.32</slf4j.version>
+        <reactor.version>3.4.14</reactor.version>
+        <slf4j.version>1.7.36</slf4j.version>
     </properties>
 
     <dependencies>
@@ -60,6 +60,12 @@
             <groupId>io.rsocket</groupId>
             <artifactId>rsocket-transport-netty</artifactId>
             <version>1.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.linecorp.armeria/armeria -->
+        <dependency>
+            <groupId>com.linecorp.armeria</groupId>
+            <artifactId>armeria</artifactId>
+            <version>1.14.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
         <dependency>
