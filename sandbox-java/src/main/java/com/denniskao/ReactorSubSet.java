@@ -23,7 +23,7 @@ public class ReactorSubSet {
                     })
                     .doFinally(s -> {
                         subs.remove(ref);
-                        System.out.println("finally");
+                        System.out.println("finally: " + s);
                     })
                     .takeUntil(x -> x == 10)
                     .subscribe();
