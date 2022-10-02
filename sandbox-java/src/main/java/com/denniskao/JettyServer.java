@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public class JettyServer {
 
@@ -41,8 +42,8 @@ public class JettyServer {
             }
             while (outputStream.isReady()) {
                 logger.info("ready {}", offset);
-//                outputStream.write(buffer, offset, 1);
-//                offset += 1;
+                outputStream.write(buffer, offset, 1);
+                offset += 1;
                 outputStream.write(buffer);
             }
             logger.info("not ready {}", offset);
@@ -75,6 +76,7 @@ public class JettyServer {
 
         var ctx = new ServletContextHandler();
         ctx.setContextPath("/");
+        ctx.setVirtualHosts(new String[]{"aaa.a.a"});
 
         var ok = new ServletHolder(new OkServlet());
         ok.setAsyncSupported(true);
