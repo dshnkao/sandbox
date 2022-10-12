@@ -1,20 +1,17 @@
 package example
 
-import com.twitter.util.{Await, Awaitable, FuturePools, Promise}
+import com.twitter.util.{Await, Awaitable, Future, FuturePools, Promise}
 
 object TwitterFutureInterrupt {
   def main(args: Array[String]): Unit = {
-    var p = Promise[String]()
-    p.setInterruptHandler(e => {
-      println("interrupted")
-    })
-    var job = FuturePools.unboundedPool() {
-      Thread.sleep(2000)
-      p.setValue("done")
+    val job1: Future[Unit] = FuturePools.interruptibleUnboundedPool() {
+      println("job1 start")
+      Thread.sleep(5000)
+      println("job1 end")
     }
-    p.raise(new RuntimeException("interrupt"))
+    job1.raise(new RuntimeException("interrupt"))
     println(
-      Await.result(p)
+      Await.result(job1)
     )
   }
 }

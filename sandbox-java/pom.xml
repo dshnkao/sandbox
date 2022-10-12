@@ -85,6 +85,12 @@
             <artifactId>armeria</artifactId>
             <version>1.14.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.23</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

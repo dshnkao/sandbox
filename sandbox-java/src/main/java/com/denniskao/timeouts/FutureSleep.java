@@ -2,7 +2,7 @@ package com.denniskao.timeouts;
 
 import java.util.concurrent.CompletableFuture;
 
-public class CFuture {
+public class FutureSleep {
     public static void main(String[] args) throws InterruptedException {
         var job = CompletableFuture.runAsync(() -> {
             try {
