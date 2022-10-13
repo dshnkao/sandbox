@@ -1,10 +1,8 @@
 package com.denniskao.timeouts;
 
-import com.denniskao.Loom;
 import jdk.incubator.concurrent.StructuredTaskScope;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
 
 public class StructuredTask {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
