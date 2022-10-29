@@ -3,6 +3,11 @@ package com.denniskao;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
+/**
+ *
+ * https://openjdk.org/jeps/193
+ * AtomicReference without the Object overhead. Used to replace Unsafe.
+ */
 public class MyVarHandle {
 
     int i;
