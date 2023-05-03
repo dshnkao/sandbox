@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.concurrency;
 
 public class Volatile {
     // add volatile to see change detected by Reader

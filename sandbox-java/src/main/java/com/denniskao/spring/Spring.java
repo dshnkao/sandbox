@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

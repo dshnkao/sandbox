@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.benchmark;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;

@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.concurrency;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Phaser;

@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.threads;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
