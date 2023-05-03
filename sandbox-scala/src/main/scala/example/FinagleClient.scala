@@ -14,14 +14,14 @@ object FinagleClient {
     .withSessionPool.minSize(10)
     .withSessionPool.maxSize(10)
     .withSessionPool.ttl(10.seconds)
-    .withTls("www.canva.com")
+//    .withTls("www.canva.com")
 
   val serv1: Service[Request, Response] = clientBase
     .withExecutionOffloaded(Executors.newSingleThreadExecutor((r: Runnable) => new Thread(r, "thread-serv1")))
-    .newService("www.canva.com:443", "canva/healthz")
+    .newService("localhost:8000", "canva/healthz")
   val serv2: Service[Request, Response] = clientBase
     .withExecutionOffloaded(Executors.newSingleThreadExecutor((r: Runnable) => new Thread(r, "thread-serv2")))
-    .newService("www.canva.com:443", "canva/healthz")
+    .newService("localhost:8000", "canva/healthz")
 
   def main(args: Array[String]): Unit = {
 
@@ -31,6 +31,7 @@ object FinagleClient {
         println(resp)
       }
       .ensure(latch.countDown())
+//    latch.await()
     serv2.apply(Request("/healthz"))
       .map { resp =>
         println(Thread.currentThread().getName)

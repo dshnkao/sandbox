@@ -6,6 +6,13 @@ import java.util.concurrent.TimeUnit;
 
 public class CompletableFutureTimeout {
   public static void main(String[] args) throws ExecutionException, InterruptedException {
+    var j = CompletableFuture.completedFuture(1);
+    j.thenApply(
+        ignored -> {
+          System.out.println("abc");
+          return null;
+        });
+
     var job =
         CompletableFuture.runAsync(
                 () -> {
@@ -38,5 +45,16 @@ public class CompletableFutureTimeout {
     job.get();
     System.out.println(Thread.currentThread().getName());
     Thread.sleep(6000);
+
+    Runnable doFoo = () -> {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    };
+    var job3 = CompletableFuture.runAsync(doFoo)
+            .thenRunAsync(() -> {});
+    job3.cancel(true);
   }
 }

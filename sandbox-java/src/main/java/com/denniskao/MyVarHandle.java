@@ -6,7 +6,7 @@ import java.lang.invoke.VarHandle;
 /**
  *
  * https://openjdk.org/jeps/193
- * AtomicReference without the Object overhead. Used to replace Unsafe.
+ * AtomicReference without the Object overhead. Replaces Unsafe.
  */
 public class MyVarHandle {
 
