@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.jetty;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServlet;

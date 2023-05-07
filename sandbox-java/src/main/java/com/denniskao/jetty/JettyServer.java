@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.jetty;
 
 import jakarta.servlet.AsyncContext;
 import jakarta.servlet.ServletOutputStream;
@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 
 public class JettyServer {
 
