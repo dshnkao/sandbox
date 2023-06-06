@@ -1,4 +1,4 @@
-package com.denniskao;
+package com.denniskao.chrome;
 
 import com.linecorp.armeria.common.*;
 import com.linecorp.armeria.server.Server;
