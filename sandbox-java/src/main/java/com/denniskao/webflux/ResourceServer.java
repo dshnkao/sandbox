@@ -1,5 +1,7 @@
 package com.denniskao.webflux;
 
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.http.server.reactive.HttpHandler;

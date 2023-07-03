@@ -1,2 +1,3 @@
-package com.denniskao.reactive;public class RSocketEcho {
-}
+package com.denniskao.reactive;
+
+public class RSocketEcho {}
