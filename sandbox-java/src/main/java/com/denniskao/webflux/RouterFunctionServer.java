@@ -49,7 +49,7 @@ public class RouterFunctionServer {
     ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(httpHandler);
     HttpServer.create()
         .host("localhost")
-        .port(9080)
+        .port(9089)
         .handle(adapter)
         .accessLog(true)
         .bindNow()
