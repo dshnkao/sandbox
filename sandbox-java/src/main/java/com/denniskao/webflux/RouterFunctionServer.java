@@ -1,6 +1,8 @@
 package com.denniskao.webflux;
 
 import com.google.common.net.HttpHeaders;
+
+import java.util.List;
 import java.util.Objects;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.server.reactive.HttpHandler;
@@ -10,14 +12,19 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.netty.http.server.HttpServer;
 
 public class RouterFunctionServer {
 
   static class Handler {
-    public Mono<ServerResponse> ok(ServerRequest request) {
+    public Mono<ServerResponse> mono(ServerRequest request) {
       return ServerResponse.ok().bodyValue("ok");
+    }
+
+    public Mono<ServerResponse> flux(ServerRequest request) {
+      return ServerResponse.ok().body(Flux.fromIterable(List.of("1", "2", "3", "4")), String.class);
     }
   }
 
@@ -29,7 +36,7 @@ public class RouterFunctionServer {
     RouterFunction<ServerResponse> canvaRoutes =
         RouterFunctions.route() //
             .resources("/resource/**", fs)
-            .GET("/ok", handler::ok)
+            .GET("/ok", handler::mono)
             .build();
 
     // an attempt at virtual hosting

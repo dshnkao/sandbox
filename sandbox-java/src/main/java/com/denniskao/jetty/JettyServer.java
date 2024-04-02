@@ -1,11 +1,7 @@
 package com.denniskao.jetty;
 
-import jakarta.servlet.AsyncContext;
-import jakarta.servlet.ServletOutputStream;
-import jakarta.servlet.WriteListener;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import org.eclipse.jetty.http2.server.HTTP2CServerConnectionFactory;
+import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -14,6 +10,12 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.AsyncContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.WriteListener;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -58,6 +60,8 @@ public class JettyServer {
         @Override
         protected void service(HttpServletRequest request, HttpServletResponse response) {
             try {
+
+                System.out.println(request.getServerName());
                 var ctx = request.startAsync();
                 var out = response.getOutputStream();
                 out.setWriteListener(new OkWriteListener(ctx, out));
@@ -69,13 +73,16 @@ public class JettyServer {
 
     public static void main(String[] args) throws Exception {
         var server = new Server();
-        var connector = new ServerConnector(server, 1, 1, new HttpConnectionFactory());
-        connector.setPort(8080);
+        var config = new HttpConfiguration();
+        var http2 = new HTTP2CServerConnectionFactory(config);
+        var connector = new ServerConnector(server, 1, 1, http2);
+        connector.setPort(6000);
+
         server.addConnector(connector);
 
         var ctx = new ServletContextHandler();
         ctx.setContextPath("/");
-        ctx.setVirtualHosts(new String[]{"aaa.a.a"});
+//        ctx.setVirtualHosts(new String[]{"aaa.a.a"});
 
         var ok = new ServletHolder(new OkServlet());
         ok.setAsyncSupported(true);
