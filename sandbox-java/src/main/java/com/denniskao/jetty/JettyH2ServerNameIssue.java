@@ -94,7 +94,6 @@ public class JettyH2ServerNameIssue {
 
         var req = Request.apply("");
         req.method(Method.Post());
-        req.setContentType();
         req.headerMap().put("Host", "www.canva.com");
         req.headerMap().put("host", "foo.com");
         req.headerMap().put("Test", "test");
