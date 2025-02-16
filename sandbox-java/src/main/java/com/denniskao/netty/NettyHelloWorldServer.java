@@ -36,9 +36,9 @@ public final class NettyHelloWorldServer {
         }
 
         @Override
-        public void channelRead0(ChannelHandlerContext ctx, HttpObject msg) {
+        public void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+            Thread.sleep(100);
             if (msg instanceof HttpRequest req) {
-
                 var keepAlive = HttpUtil.isKeepAlive(req);
                 var response = new DefaultFullHttpResponse(req.protocolVersion(), OK,
                         Unpooled.wrappedBuffer(CONTENT));
@@ -69,7 +69,7 @@ public final class NettyHelloWorldServer {
         }
     }
 
-    static class HttpHelloWorldServerInitializer extends ChannelInitializer<SocketChannel> {
+    public static class HttpHelloWorldServerInitializer extends ChannelInitializer<SocketChannel> {
 
         private final SslContext sslCtx;
 
